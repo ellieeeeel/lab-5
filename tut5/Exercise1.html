@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Smiley Face</title>
+    <style>
+        body {
+            background-color: #99cc99; /* Set background color to light green */
+            text-align: center; /* Center the content */
+        }
+        canvas {
+            margin-top: 20px;
+        }
+        p {
+            font-size: 20px;
+            font-weight: bold;
+            color: #008000; /* Set text color to green */
+        }
+    </style>
+</head>
+<body>
+    <canvas id="myCanvas" width="400" height="400"></canvas>
+    <p>The Canvas brought me to life!</p> <!-- Add text with specific font styles -->
+
+    <script>
+        var canvas = document.getElementById("myCanvas");
+        var ctx = canvas.getContext("2d");
+
+        // Set the background to light green
+        ctx.fillStyle = "#99cc99"; // Background color light green
+        ctx.fillRect(0, 0, canvas.width, canvas.height);
+
+        // Draw the face
+        ctx.beginPath();
+        ctx.arc(200, 200, 150, 0, Math.PI * 2, true); // Outer circle
+        ctx.fillStyle = "yellow"; // Face color yellow
+        ctx.fill();
+        ctx.stroke();
+
+        // Draw the eyes
+        ctx.beginPath();
+        ctx.arc(150, 150, 10, 0, Math.PI * 2, true); // Left eye
+        ctx.moveTo(250, 150);
+        ctx.arc(250, 150, 10, 0, Math.PI * 2, true); // Right eye
+        ctx.fillStyle = "black"; // Eye color black
+        ctx.fill();
+
+        // Draw the nose
+        ctx.beginPath();
+        ctx.moveTo(200, 160);
+        ctx.lineTo(200, 230); // Vertical line for the nose
+        ctx.stroke();
+
+        // Draw the mouth
+        ctx.beginPath();
+        ctx.arc(200, 260, 60, 0, Math.PI, false);  // Draw the mouth clockwise
+        ctx.stroke();
+    </script>
+</body>
+</html>
